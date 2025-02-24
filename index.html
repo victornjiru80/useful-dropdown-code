@@ -1,1 +1,74 @@
 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example menu</title>
+    <style>
+    body{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    h1{
+        text-align: center;
+        color: crimson;
+    }
+   .accordion-header{
+    background-color: #eee;
+    padding: 18px;
+    border: none;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   }
+    .accordion-header:hover{
+        background-color: #ccc;
+    }
+    .icon{
+        transition: 0.2s all ease-in-out;
+    }
+    .panel{
+        display: none;
+        padding:10px;
+    }
+    .active{
+        transform: rotate(90deg);
+    }
+    </style>
+</head>
+<body>
+    <h1>dropdown-menu</h1>
+    <div class ="accordion-div">
+    <div class ="accordion-header"onclick ="toggle(this)">
+    <span>Section 1</span>
+    <span class ="icon">&#9654</span>
+</div>
+    <div class="panel"><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente, dolorum. Suscipit quibusdam aperiam repellendus nostrum soluta autem nesciunt. Neque, suscipit.</p></div>
+   </div>
+   <div class ="accordion-div">
+    <div class ="accordion-header"onclick ="toggle(this)">
+    <span>Section 2</span>
+    <span class ="icon">&#9654</span>
+</div>
+    <div class="panel"><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente, dolorum. Suscipit quibusdam aperiam repellendus nostrum soluta autem nesciunt. Neque, suscipit.</p></div>
+   </div>
+   <div class ="accordion-div">
+    <div class ="accordion-header"onclick ="toggle(this)">
+    <span>Section 3</span>
+    <span class ="icon">&#9654</span>
+</div>
+    <div class="panel"><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente, dolorum. Suscipit quibusdam aperiam repellendus nostrum soluta autem nesciunt. Neque, suscipit.</p></div>
+   </div>
+   <script>
+    function toggle(header) {
+      var icon =  header.querySelector(".icon");
+      var panel = header.nextElementSibling;
+      panel.style.display = panel.style.display === "block" ? "none" : "block";
+      icon.classList.toggle("active")
+    }
+    </script>
+</body>
+</html>
